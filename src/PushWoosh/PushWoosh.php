@@ -1,21 +1,70 @@
 <?php
+/**
+ * A PHP library for sending push messages using PushWoosh.
+ *
+ * This library allows new push notifications to be created using the PushWoosh service.
+ *
+ * Can be installed using Composer.
+ *
+ * @package PushWoosh
+ */
 
 namespace PushWoosh;
 
+/**
+ * The PushWoosh class is a class for interacting with the PushWoosh push notification service.
+ *
+ * The constructor of the PushWoosh class takes parameters for the application ID, username and password.
+ * @category library
+ * @package PushWoosh
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
+ * @example <br />
+ *  $push = new PushWoosh($appId, $username, $password);<br />
+ *  $push->createMessage($users, 'now', null);
+ * @version 0.0.1
+ * @since 2014-02-27
+ * @author Matthew Daly
+ */
+
 class PushWoosh
 {
-    public function __construct($config)
+    /**
+     * The configuration settings. Should consist of an array with three keys:
+     * application, username and password
+     * @var array
+     */
+    protected $config;
+
+    /**
+     * Constructor for the PushWoosh object
+     *
+     * @param string $appId The PushWoosh app ID to use
+     * @param string $username The PushWoosh username to use
+     * @param string $password The PushWoosh password to use
+     *
+     * @return PushWoosh
+     * @since 2014-02-27
+     * @author Matthew Daly
+     */
+    public function __construct($appId, $username, $password)
     {
         // Set the config options up
+        $config = array();
+        $config['application'] = $appId;
+        $config['username'] = $username;
+        $config['password'] = $password;
         $this->config = $config;
     }
 
-    /*
+    /**
      * Sends a POST request to create the push message
+     *
      * @param string $url The URL to send the POST request to
      * @param string $data The data to be sent, encoded as JSON
      * @param string $optional_headers Any optional headers. Defaults to null
+     *
      * @return mixed Returns the response, or false if nothing received
+     * @since 2014-02-27
      * @author Matthew Daly
      */
     private function doPostRequest($url, $data, $optional_headers = null)
@@ -25,76 +74,99 @@ class PushWoosh
                 'method' => 'POST',
                 'content' => $data
             ));
-        if($optional_headers !== null)
-        {
+        if ($optional_headers !== null) {
             $params['http']['header'] = $optional_headers;
         }
         $ctx = stream_context_create($params);
         $fp = fopen($url, 'rb', false, $ctx);
-        if(!$fp)
-        {
+        if (!$fp) {
             throw new Exception("Problem with $url, $php_errmsg");
         }
 
         $response = @stream_get_contents($fp);
-        if($response === false)
-        {
+        if ($response === false) {
             return false;
         }
         return $response;
     }
 
-    /*
+    /**
      * Puts together the POST request to create the push message
+     *
      * @param string $action The action to take
      * @param array $data The data to send
+     *
      * @return bool Confirms that the method executed
+     * @since 2014-02-27
      * @author Matthew Daly
      */
-    private function pwCall($action, $data = array())
+    private function pwCall($action, array $data = array())
     {
-        $url = 'https://cp.pushwoosh.com/json/1.2/'.$action;
+        $url = 'https://cp.pushwoosh.com/json/1.3/'.$action;
         $json = json_encode(array('request' => $data));
         $res = $this->doPostRequest($url, $json, 'Content-Type: application/json');
+        $responseData = json_decode($res);
+        var_dump($responseData);
+        if ($responseData->status_code == 200) {
+            $response = true;
+        } else {
+            // Failed - log error and advise
+            $response = false;
+            error_log("Could not sent push - " . $responseData->status_message);
+        }
+        return $response;
     }
 
-    /*
+    /**
      * Creates a push message using PushWoosh
-     * @param string $pushes An array containing the message and device token for each push notification to be sent
+     *
+     * @param array $pushes An array of messages to be sent. Each message in the array should be an associative array,
+     * with the key 'content' representing the content of the message to be sent, and the key 'devices' representing 
+     * the device token to send that message to. Leave 'devices' empty to send that message to all users
      * @param string $sendDate Send date of the message. Defaults to right now
      * @param string $link A link to follow when the push notification is clicked. Defaults to null
+     * @param int $ios_badges The iOS badge number. Defaults to 1
+     *
      * @return bool Confirms that the method executed
+     * @since 2014-02-27
      * @author Matthew Daly
      */
-    public function createMessage($pushes, $sendDate = 'now', $link = null)
+    public function createMessage(array $pushes, $sendDate = 'now', $link = null, $ios_badges = 1)
     {
         // Get the config settings
         $config = $this->config;
 
         // Store the message data
         $data = array(
-            'application' => $config['push']['application'],
-            'username' => $config['push']['username'],
-            'password' => $config['push']['password']
+            'application' => $config['application'],
+            'username' => $config['username'],
+            'password' => $config['password']
         );
 
         // Loop through each push and add them to the notifications array
-        foreach ($pushes as $push)
-        {
+        foreach ($pushes as $push) {
             $pushData = array(
                 'send_date' => $sendDate,
                 'content' => $push['content'],
-                'ios_badges' => 3,
-                'devices' => $push['devices']
+                'ios_badges' => $ios_badges
             );
+
+            // If a list of devices is specified, add that to the push data
+            if (array_key_exists('devices', $push)) {
+                $pushData['devices'] = $push['devices'];
+            }
+
+            // If a link is specified, add that to the push data
+            if ($link) {
+                $pushData['link'] = $link;
+            }
             $data['notifications'][] = $pushData;
         }
 
         // Send the message
-        $this->pwCall('createMessage', $data);
+        $response = $this->pwCall('createMessage', $data);
 
         // Return a value
-        return true;
+        return $response;
     }
 }
-?>
