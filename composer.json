@@ -1,7 +1,7 @@
 {
     "name": "astutech/pushwoosh-php-library",
     "description": "A PHP interface to the PushWoosh push notification service",
-    "license": "http://opensource.org/licenses/MIT",
+    "license": "MIT",
     "authors": [
         {
             "name": "Matthew Daly",
