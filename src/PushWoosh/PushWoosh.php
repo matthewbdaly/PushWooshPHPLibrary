@@ -127,7 +127,7 @@ class PushWoosh
      * @param string $link A link to follow when the push notification is clicked. Defaults to null
      * @param int $ios_badges The iOS badge number. Defaults to 1
      *
-     * @return bool Confirms that the method executed
+     * @return bool Confirms whether the method executed successfully
      * @since 2014-02-27
      * @author Matthew Daly
      */
