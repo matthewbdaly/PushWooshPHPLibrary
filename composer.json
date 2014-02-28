@@ -5,10 +5,10 @@
     "authors": [
         {
             "name": "Matthew Daly",
-            "email": "matthew@astutech.com"
+            "email": "matthew@astutech.com",
+            "homepage": "http://www.astutech.co.uk/"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.0"
     },
