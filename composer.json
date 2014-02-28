@@ -1,7 +1,6 @@
 {
     "name": "astutech/pushwoosh",
     "description": "A PHP interface to the PushWoosh push notification service",
-    "license": "GPLv2",
     "authors": [
         {
             "name": "Matthew Daly",

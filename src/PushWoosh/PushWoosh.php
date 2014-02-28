@@ -17,7 +17,6 @@ namespace PushWoosh;
  * The constructor of the PushWoosh class takes parameters for the application ID, username and password.
  * @category library
  * @package PushWoosh
- * @license http://www.gnu.org/licenses/gpl-2.0.html
  * @example <br />
  *  $push = new PushWoosh($appId, $username, $password);<br />
  *  $push->createMessage($users, 'now', null);
