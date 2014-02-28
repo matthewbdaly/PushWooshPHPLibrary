@@ -1,5 +1,5 @@
 {
-    "name": "astutech/pushwoosh",
+    "name": "astutech/pushwoosh-php-library",
     "description": "A PHP interface to the PushWoosh push notification service",
     "authors": [
         {
