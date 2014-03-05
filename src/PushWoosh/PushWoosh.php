@@ -21,9 +21,9 @@ namespace PushWoosh;
  * @example <br />
  *  $push = new PushWoosh($appId, $username, $password);<br />
  *  $push->createMessage($users, 'now', null);
- * @version 0.0.1
+ * @version 0.0.2
  * @since 2014-02-27
- * @author Matthew Daly
+ * @author Matthew Daly matthew@astutech.com
  */
 
 class PushWoosh
@@ -44,7 +44,7 @@ class PushWoosh
      *
      * @return PushWoosh
      * @since 2014-02-27
-     * @author Matthew Daly
+     * @author Matthew Daly matthew@astutech.com
      */
     public function __construct($appId, $username, $password)
     {
@@ -65,7 +65,7 @@ class PushWoosh
      *
      * @return mixed Returns the response, or false if nothing received
      * @since 2014-02-27
-     * @author Matthew Daly
+     * @author Matthew Daly matthew@astutech.com
      */
     private function doPostRequest($url, $data, $optional_headers = null)
     {
@@ -98,7 +98,7 @@ class PushWoosh
      *
      * @return bool Confirms that the method executed
      * @since 2014-02-27
-     * @author Matthew Daly
+     * @author Matthew Daly matthew@astutech.com
      */
     private function pwCall($action, array $data = array())
     {
@@ -106,7 +106,6 @@ class PushWoosh
         $json = json_encode(array('request' => $data));
         $res = $this->doPostRequest($url, $json, 'Content-Type: application/json');
         $responseData = json_decode($res);
-        var_dump($responseData);
         if ($responseData->status_code == 200) {
             $response = true;
         } else {
@@ -129,7 +128,7 @@ class PushWoosh
      *
      * @return bool Confirms whether the method executed successfully
      * @since 2014-02-27
-     * @author Matthew Daly
+     * @author Matthew Daly matthew@astutech.com
      */
     public function createMessage(array $pushes, $sendDate = 'now', $link = null, $ios_badges = 1)
     {
