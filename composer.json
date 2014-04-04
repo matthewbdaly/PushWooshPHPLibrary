@@ -16,5 +16,8 @@
         "psr-0": {
             "PushWoosh": "src/"
         }
+    },
+    "require-dev": {
+        "apigen/apigen": "*"
     }
 }
