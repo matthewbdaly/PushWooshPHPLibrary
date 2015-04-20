@@ -130,7 +130,7 @@ class PushWoosh
      * @since 2014-02-27
      * @author Matthew Daly matthew@astutech.com
      */
-    public function createMessage(array $pushes, $sendDate = 'now', $link = null, $ios_badges = 1)
+    public function createMessage(array $pushes, $sendDate = 'now', $link = null, $ios_badges = 0)
     {
         // Get the config settings
         $config = $this->config;
