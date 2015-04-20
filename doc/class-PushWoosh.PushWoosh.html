@@ -117,7 +117,7 @@ href="mailto:matthew&#64;astutech.com">matthew&#64;<!-- -->astutech.com</a><br>
 				<br />
 $push = new PushWoosh($appId, $username, $password);<br />
 $push-&gt;createMessage($users, 'now', null);<br>
-		<b>Located at</b> <a href="source-class-PushWoosh.PushWoosh.html#15-178" title="Go to source code">PushWoosh/PushWoosh.php</a><br>
+		<b>Located at</b> <a href="source-class-PushWoosh.PushWoosh.html#15-187" title="Go to source code">PushWoosh/PushWoosh.php</a><br>
 	</div>
 
 
@@ -135,7 +135,7 @@ $push-&gt;createMessage($users, 'now', null);<br>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-PushWoosh.PushWoosh.html#38-57" title="Go to source code">__construct</a>( <span>string <var>$appId</var></span>, <span>string <var>$username</var></span>, <span>string <var>$password</var></span> )</code>
+		<code><a href="source-class-PushWoosh.PushWoosh.html#38-59" title="Go to source code">__construct</a>( <span>string <var>$appId</var></span>, <span>string <var>$username</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$password</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$apiToken</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -157,6 +157,9 @@ $push-&gt;createMessage($users, 'now', null);<br>
 					<dd><code>string</code><br>$username The PushWoosh username to use</dd>
 					<dt><var>$password</var></dt>
 					<dd><code>string</code><br>$password The PushWoosh password to use</dd>
+					<dt><var>$apiToken</var></dt>
+					<dd><code>string</code><br>$apiToken The API token to use - Not to be used at the same time as the username
+and password</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -190,7 +193,7 @@ href="mailto:matthew&#64;astutech.com">matthew&#64;<!-- -->astutech.com</a><br>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createMessage">#</a>
-		<code><a href="source-class-PushWoosh.PushWoosh.html#119-177" title="Go to source code">createMessage</a>( <span>array <var>$pushes</var></span>, <span>string <var>$sendDate</var> = <span class="php-quote">'now'</span></span>, <span>string <var>$link</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$ios_badges</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-PushWoosh.PushWoosh.html#121-186" title="Go to source code">createMessage</a>( <span>array <var>$pushes</var></span>, <span>string <var>$sendDate</var> = <span class="php-quote">'now'</span></span>, <span>string <var>$link</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$ios_badges</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			

@@ -41,18 +41,20 @@ class PushWoosh
      * @param string $appId The PushWoosh app ID to use
      * @param string $username The PushWoosh username to use
      * @param string $password The PushWoosh password to use
+     * @param string $apiToken The API token to use - Not to be used at the same time as the username and password
      *
      * @return PushWoosh
      * @since 2014-02-27
      * @author Matthew Daly matthew@astutech.com
      */
-    public function __construct($appId, $username, $password)
+    public function __construct($appId, $username = null, $password = null, $apiToken = null)
     {
         // Set the config options up
         $config = array();
         $config['application'] = $appId;
         $config['username'] = $username;
         $config['password'] = $password;
+        $config['apitoken'] = $apiToken;
         $this->config = $config;
     }
 
@@ -136,11 +138,18 @@ class PushWoosh
         $config = $this->config;
 
         // Store the message data
-        $data = array(
-            'application' => $config['application'],
-            'username' => $config['username'],
-            'password' => $config['password']
-        );
+        if ($config['apitoken']) {
+            $data = array(
+                'application' => $config['application'],
+                'auth' => $config['apitoken']
+            );
+        } else {
+            $data = array(
+                'application' => $config['application'],
+                'username' => $config['username'],
+                'password' => $config['password']
+            );
+        }
 
         // Loop through each push and add them to the notifications array
         foreach ($pushes as $push) {
