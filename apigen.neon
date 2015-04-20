@@ -1,0 +1,22 @@
+source:
+    - src
+
+destination: doc
+
+tree: true
+
+sourceCode: true
+
+php: false
+
+autocomplete:
+    # default
+    - classes
+    - constants
+    - functions
+    # other
+    - methods
+    - properties
+    - classconstants
+
+title: Pushwoosh PHP Library

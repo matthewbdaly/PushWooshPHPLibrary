@@ -159,6 +159,13 @@ class PushWoosh
             if ($link) {
                 $pushData['link'] = $link;
             }
+
+            // If a condition is set, add that to the push data
+            if (isset($push['condition'])) {
+                $pushData['conditions'] = $push['conditions'];
+            }
+
+            // Add data to array
             $data['notifications'][] = $pushData;
         }
 
