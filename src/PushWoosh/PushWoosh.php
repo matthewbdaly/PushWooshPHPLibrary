@@ -170,7 +170,7 @@ class PushWoosh
             }
 
             // If a condition is set, add that to the push data
-            if (isset($push['condition'])) {
+            if (isset($push['conditions'])) {
                 $pushData['conditions'] = $push['conditions'];
             }
 
