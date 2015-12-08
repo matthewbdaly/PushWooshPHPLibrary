@@ -174,6 +174,11 @@ class PushWoosh
                 $pushData['conditions'] = $push['conditions'];
             }
 
+            // If data is set, pass it through
+            if (isset($push['data'])) {
+                $pushData['data'] = $push['data'];
+            }
+
             // Add data to array
             $data['notifications'][] = $pushData;
         }
