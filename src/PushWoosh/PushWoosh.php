@@ -132,7 +132,7 @@ class PushWoosh
      * @since 2014-02-27
      * @author Matthew Daly matthew@astutech.com
      */
-    public function createMessage(array $pushes, $sendDate = 'now', $link = null, $ios_badges = 0)
+    public function createMessage(array $pushes, $sendDate = 'now', $link = null, $badges = 0)
     {
         // Get the config settings
         $config = $this->config;
@@ -156,7 +156,8 @@ class PushWoosh
             $pushData = array(
                 'send_date' => $sendDate,
                 'content' => $push['content'],
-                'ios_badges' => $ios_badges
+                'ios_badges' => $badges,
+                'android_badges' = $badges
             );
 
             // If a list of devices is specified, add that to the push data
