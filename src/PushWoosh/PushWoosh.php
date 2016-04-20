@@ -157,7 +157,7 @@ class PushWoosh
                 'send_date' => $sendDate,
                 'content' => $push['content'],
                 'ios_badges' => $badges,
-                'android_badges' = $badges
+                'android_badges' => $badges
             );
 
             // If a list of devices is specified, add that to the push data
