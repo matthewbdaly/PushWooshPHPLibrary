@@ -25,7 +25,7 @@ namespace PushWoosh;
  *
  * @since 2014-02-27
  *
- * @author Matthew Daly matthew@astutech.com
+ * @author Matthew Daly matthewbdaly@gmail.com
  */
 class PushWoosh
 {
@@ -49,7 +49,7 @@ class PushWoosh
      *
      * @since 2014-02-27
      *
-     * @author Matthew Daly matthew@astutech.com
+     * @author Matthew Daly matthewbdaly@gmail.com
      */
     public function __construct($appId, $username = null, $password = null, $apiToken = null)
     {
@@ -73,7 +73,7 @@ class PushWoosh
      *
      * @since 2014-02-27
      *
-     * @author Matthew Daly matthew@astutech.com
+     * @author Matthew Daly matthewbdaly@gmail.com
      */
     private function doPostRequest($url, $data, $optional_headers = null)
     {
@@ -109,7 +109,7 @@ class PushWoosh
      *
      * @since 2014-02-27
      *
-     * @author Matthew Daly matthew@astutech.com
+     * @author Matthew Daly matthewbdaly@gmail.com
      */
     private function pwCall($action, array $data = [])
     {
@@ -142,7 +142,7 @@ class PushWoosh
      *
      * @since 2014-02-27
      *
-     * @author Matthew Daly matthew@astutech.com
+     * @author Matthew Daly matthewbdaly@gmail.com
      */
     public function createMessage(array $pushes, $sendDate = 'now', $link = null, $badges = 0)
     {
