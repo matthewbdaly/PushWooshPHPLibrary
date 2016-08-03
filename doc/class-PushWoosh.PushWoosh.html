@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="generator" content="ApiGen 2.8.0">
+	<meta charset="utf-8">
 
 	<title>Class PushWoosh\PushWoosh | Pushwoosh PHP Library</title>
 
-	<script type="text/javascript" src="resources/combined.js?1125613996"></script>
-	<script type="text/javascript" src="elementlist.js?1201348486"></script>
-	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360">
+	<link rel="stylesheet" href="resources/style.css?c2f33731c1948fbed7c333554678bfa68d4817da">
 
 </head>
 
@@ -19,9 +16,12 @@
 
 
 		<div id="groups">
-			<h3>Namespaces</h3>
+				<h3>Namespaces</h3>
 			<ul>
-				<li class="active"><a href="namespace-PushWoosh.html">PushWoosh</a>
+				<li class="active">
+					<a href="namespace-PushWoosh.html">
+						PushWoosh					</a>
+
 						</li>
 			</ul>
 		</div>
@@ -50,8 +50,7 @@
 	<form id="search">
 		<input type="hidden" name="cx" value="">
 		<input type="hidden" name="ie" value="UTF-8">
-		<input type="text" name="q" class="text">
-		<input type="submit" value="Search">
+		<input type="text" name="q" class="text" placeholder="Search">
 	</form>
 
 	<div id="navigation">
@@ -79,13 +78,9 @@
 
 
 	<div class="description">
-	
-<p>The PushWoosh class is a class for interacting with the PushWoosh push
-notification service.</p>
+	<p>The PushWoosh class is a class for interacting with the PushWoosh push notification service.</p>
 
-<p>The constructor of the PushWoosh class takes parameters for the application
-ID, username and password.</p>
-
+<p>The constructor of the PushWoosh class takes parameters for the application ID, username and password.</p>
 	</div>
 
 
@@ -100,34 +95,35 @@ ID, username and password.</p>
 		
 		
 		<b>Namespace:</b> <a href="namespace-PushWoosh.html">PushWoosh</a><br>
-		<b>Package:</b> PushWoosh<br>
+		
 
 				<b>Category:</b>
 				library<br>
 				<b>License:</b>
 				<a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a><br>
 				<b>Author:</b>
-				Matthew Daly <a
-href="mailto:matthew&#64;astutech.com">matthew&#64;<!-- -->astutech.com</a><br>
+				Matthew Daly matthew@astutech.com<br>
 				<b>Version:</b>
 				0.0.2<br>
 				<b>Since:</b>
 				2014-02-27<br>
 				<b>Example:</b>
-				<br />
-$push = new PushWoosh($appId, $username, $password);<br />
-$push-&gt;createMessage($users, 'now', null);<br>
-		<b>Located at</b> <a href="source-class-PushWoosh.PushWoosh.html#15-193" title="Go to source code">PushWoosh/PushWoosh.php</a><br>
+				<p><br />
+ $push = new PushWoosh($appId, $username, $password);<br />
+ $push->createMessage($users, 'now', null);</p><br>
+			<b>Located at</b> <a href="source-class-PushWoosh.PushWoosh.html#11-205" title="Go to source code">PushWoosh/PushWoosh.php</a>
+		<br>
 	</div>
 
 
 
-	<table class="summary" id="methods">
+	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
 	<tr data-order="__construct" id="___construct">
 
 		<td class="attributes"><code>
 			 public 
+
 			<code><a href="class-PushWoosh.PushWoosh.html">PushWoosh\PushWoosh</a></code>
 			
 			</code>
@@ -135,43 +131,37 @@ $push-&gt;createMessage($users, 'now', null);<br>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-PushWoosh.PushWoosh.html#38-59" title="Go to source code">__construct</a>( <span>string <var>$appId</var></span>, <span>string <var>$username</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$password</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$apiToken</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-PushWoosh.PushWoosh.html#40-63" title="Go to source code">__construct</a>( <span>string <var>$appId</var></span>, <span>string <var>$username</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$password</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$apiToken</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
-			
-<p>Constructor for the PushWoosh object</p>
-
+			<p>Constructor for the PushWoosh object.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
-<p>Constructor for the PushWoosh object</p>
-
+			<p>Constructor for the PushWoosh object.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$appId</var></dt>
-					<dd><code>string</code><br>$appId The PushWoosh app ID to use</dd>
+					<dd>The PushWoosh app ID to use</dd>
 					<dt><var>$username</var></dt>
-					<dd><code>string</code><br>$username The PushWoosh username to use</dd>
+					<dd>The PushWoosh username to use</dd>
 					<dt><var>$password</var></dt>
-					<dd><code>string</code><br>$password The PushWoosh password to use</dd>
+					<dd>The PushWoosh password to use</dd>
 					<dt><var>$apiToken</var></dt>
-					<dd><code>string</code><br>$apiToken The API token to use - Not to be used at the same time as the username
-and password</dd>
+					<dd>The API token to use - Not to be used at the same time as the username and password</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-PushWoosh.PushWoosh.html">PushWoosh\PushWoosh</a></code></code><br>
+					<code><a href="class-PushWoosh.PushWoosh.html">PushWoosh\PushWoosh</a></code>
 				</div>
 
 
 				<h4>Author</h4>
 				<div class="list">
-						Matthew Daly <a
-href="mailto:matthew&#64;astutech.com">matthew&#64;<!-- -->astutech.com</a><br>
+						Matthew Daly matthew@astutech.com<br>
 				</div>
 				<h4>Since</h4>
 				<div class="list">
@@ -186,6 +176,7 @@ href="mailto:matthew&#64;astutech.com">matthew&#64;<!-- -->astutech.com</a><br>
 
 		<td class="attributes"><code>
 			 public 
+
 			boolean
 			
 			</code>
@@ -193,45 +184,39 @@ href="mailto:matthew&#64;astutech.com">matthew&#64;<!-- -->astutech.com</a><br>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createMessage">#</a>
-		<code><a href="source-class-PushWoosh.PushWoosh.html#121-192" title="Go to source code">createMessage</a>( <span>array <var>$pushes</var></span>, <span>string <var>$sendDate</var> = <span class="php-quote">'now'</span></span>, <span>string <var>$link</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$badges</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-PushWoosh.PushWoosh.html#131-204" title="Go to source code">createMessage</a>( <span>array <var>$pushes</var></span>, <span>string <var>$sendDate</var> = <span class="php-quote">'now'</span></span>, <span>string <var>$link</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$badges</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
-			
-<p>Creates a push message using PushWoosh</p>
-
+			<p>Creates a push message using PushWoosh.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
-<p>Creates a push message using PushWoosh</p>
-
+			<p>Creates a push message using PushWoosh.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$pushes</var></dt>
-					<dd><code>array</code><br>$pushes An array of messages to be sent. Each message in the array should be an
-associative array, with the key 'content' representing the content of the
-message to be sent, and the key 'devices' representing the device token to send
-that message to. Leave 'devices' empty to send that message to all users</dd>
+					<dd><p>An array of messages to be sent. Each message in the array should be an associative array,
+                          with the key 'content' representing the content of the message to be sent, and the key 'devices' representing
+                          the device token to send that message to. Leave 'devices' empty to send that message to all users</p></dd>
 					<dt><var>$sendDate</var></dt>
-					<dd><code>string</code><br>$sendDate Send date of the message. Defaults to right now</dd>
+					<dd>Send date of the message. Defaults to right now</dd>
 					<dt><var>$link</var></dt>
-					<dd><code>string</code><br>$link A link to follow when the push notification is clicked. Defaults to null</dd>
+					<dd>A link to follow when the push notification is clicked. Defaults to null</dd>
 					<dt><var>$badges</var></dt>
-					<dd><code>integer</code><br>$ios_badges The iOS badge number. Defaults to 1</dd>
+					<dd>$ios_badges The iOS badge number. Defaults to 1</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>boolean</code><br>Confirms whether the method executed successfully<br>
+					boolean<br>Confirms whether the method executed successfully
 				</div>
 
 
 				<h4>Author</h4>
 				<div class="list">
-						Matthew Daly <a
-href="mailto:matthew&#64;astutech.com">matthew&#64;<!-- -->astutech.com</a><br>
+						Matthew Daly matthew@astutech.com<br>
 				</div>
 				<h4>Since</h4>
 				<div class="list">
@@ -255,7 +240,7 @@ href="mailto:matthew&#64;astutech.com">matthew&#64;<!-- -->astutech.com</a><br>
 
 
 
-	<table class="summary" id="properties">
+	<table class="summary properties" id="properties">
 	<caption>Properties summary</caption>
 	<tr data-order="config" id="$config">
 		<td class="attributes"><code>
@@ -264,27 +249,25 @@ href="mailto:matthew&#64;astutech.com">matthew&#64;<!-- -->astutech.com</a><br>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-PushWoosh.PushWoosh.html#31-36" title="Go to source code"><var>$config</var></a>
-		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$config" class="anchor">#</a>
+				<a href="source-class-PushWoosh.PushWoosh.html#32-38" title="Go to source code"><var>$config</var></a>
 
 			<div class="description short">
-				
-<p>The configuration settings. Should consist of an array with three keys:
-application, username and password</p>
-
+				<p>The configuration settings. Should consist of an array with three keys:
+application, username and password.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
-<p>The configuration settings. Should consist of an array with three keys:
-application, username and password</p>
-
+				<p>The configuration settings. Should consist of an array with three keys:
+application, username and password.</p>
 
 			</div>
-		</div></td>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$config" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
 	</tr>
 	</table>
 
@@ -296,9 +279,11 @@ application, username and password</p>
 </div>
 
 	<div id="footer">
-		Pushwoosh PHP Library API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+		Pushwoosh PHP Library API documentation generated by <a href="http://apigen.org">ApiGen</a>
 	</div>
 </div>
 </div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
 </body>
 </html>
